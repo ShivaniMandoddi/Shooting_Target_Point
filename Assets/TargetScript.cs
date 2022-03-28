@@ -8,7 +8,8 @@ public class TargetScript : MonoBehaviour
     ScoreCalculator scoreCalculator;
     void Start()
     {
-        scoreCalculator=GameObject.Find()
+        scoreCalculator = GameObject.Find("ScoreManager").GetComponent<ScoreCalculator>();
+        Destroy(gameObject, 2f);
     }
 
     // Update is called once per frame
@@ -19,5 +20,6 @@ public class TargetScript : MonoBehaviour
     private void OnMouseDown()
     {
         Destroy(gameObject);
+        scoreCalculator.Score(1);
     }
 }
